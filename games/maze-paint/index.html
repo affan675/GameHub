@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze Paint</title>
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/game_board.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  
+  <div id="game-container">
+    <header id="game-header">
+      <div class="level-info">
+        Level: <span id="level-display">1 (Easy)</span>
+      </div>
+      <div class="controls">
+        <button id="btn-guide">Learner Guide</button>
+        <button id="btn-hint">Hint</button>
+      </div>
+    </header>
+
+    <main id="game-main">
+      <div class="canvas-wrapper">
+        <canvas id="game-canvas"></canvas>
+      </div>
+      
+      <div id="next-level-container" class="hidden">
+        <button id="btn-next-level">Next Level</button>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast-message" class="toast hidden">
+    <span id="toast-text">Level Complete!</span>
+  </div>
+
+  <div id="guide-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>How to Play Maze Paint</h2>
+      <div class="modal-body">
+        <ul>
+          <li><strong>Goal:</strong> Paint all reachable empty cells on the board.</li>
+          <li><strong>Movement:</strong> Use the <strong>Arrow Keys</strong> to slide the ball.</li>
+          <li><strong>Mouse Control:</strong> Click on any paintable cell in the same row or column to slide directly to it.</li>
+          <li><strong>Sliding:</strong> Once the ball moves, it will not stop until it hits a wall, the edge of the grid, or the cell you clicked.</li>
+          <li><strong>Painting:</strong> Every cell the ball passes over changes color.</li>
+        </ul>
+      </div>
+      <button id="btn-close-guide" class="close-btn">Let's Play!</button>
+    </div>
+  </div>
+  
+  <!-- Removed unused justify.js -->
+  <script src="js/level_generator.js"></script>
+  <script src="js/game_state.js"></script>
+  <script src="js/movement.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/hint_system.js"></script>
+  <script src="js/level_manager.js"></script>
+  <script src="js/ui_controller.js"></script>
+  
+</body>
+</html>

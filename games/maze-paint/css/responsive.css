@@ -1,0 +1,55 @@
+/* css/responsive.css */
+/* Tablet layout adjustments */
+@media screen and (max-width: 768px) {
+  #game-container {
+    padding: 10px;
+  }
+
+  #game-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  button {
+    flex: 1;
+    margin: 0 5px;
+  }
+
+  .canvas-wrapper {
+    padding: 10px;
+  }
+}
+
+/* Mobile layout adjustments */
+@media screen and (max-width: 480px) {
+  .level-info {
+    font-size: 1rem;
+  }
+  
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  #game-canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #next-level-container {
+    margin-top: 15px;
+  }
+  
+  #btn-next-level {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}

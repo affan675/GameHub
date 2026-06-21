@@ -1,0 +1,22 @@
+const gamesList = [
+    { id: "maze-paint", title: "Maze Paint", thumbnail: "assets/images/maze-paint-thumb.png", folder: "maze-paint", isReal: true },
+    { id: "game-a", title: "Game A", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-a", isReal: false },
+    { id: "game-b", title: "Game B", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-b", isReal: false },
+    { id: "game-c", title: "Game C", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-c", isReal: false },
+    { id: "game-d", title: "Game D", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-d", isReal: false },
+    { id: "game-e", title: "Game E", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-e", isReal: false },
+    { id: "game-f", title: "Game F", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-f", isReal: false },
+    { id: "game-g", title: "Game G", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-g", isReal: false },
+    { id: "game-h", title: "Game H", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-h", isReal: false },
+    { id: "game-i", title: "Game I", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-i", isReal: false },
+    { id: "game-j", title: "Game J", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-j", isReal: false },
+    { id: "game-k", title: "Game K", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-k", isReal: false },
+    { id: "game-l", title: "Game L", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-l", isReal: false },
+    { id: "game-m", title: "Game M", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-m", isReal: false },
+    { id: "game-n", title: "Game N", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-n", isReal: false },
+    { id: "game-o", title: "Game O", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-o", isReal: false },
+    { id: "game-p", title: "Game P", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-p", isReal: false },
+    { id: "game-q", title: "Game Q", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-q", isReal: false },
+    { id: "game-r", title: "Game R", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-r", isReal: false },
+    { id: "game-s", title: "Game S", thumbnail: "assets/images/placeholder-thumb.png", folder: "game-s", isReal: false }
+];

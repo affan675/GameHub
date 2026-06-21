@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub – All Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Preloader: Controller Button Mash -->
+<div id="preloader" class="preloader">
+    <div class="preloader-controller">
+        <!-- D-Pad -->
+        <div class="dpad">
+            <div class="dpad-top dpad-arm"></div>
+            <div class="dpad-right dpad-arm"></div>
+            <div class="dpad-bottom dpad-arm"></div>
+            <div class="dpad-left dpad-arm"></div>
+            <div class="dpad-center"></div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <div class="btn-a action-btn">A</div>
+            <div class="btn-b action-btn">B</div>
+            <div class="btn-x action-btn">X</div>
+            <div class="btn-y action-btn">Y</div>
+        </div>
+        
+        <!-- Progress text -->
+        <div class="preloader-progress-text">
+            <span id="preloader-percent">0</span>%
+        </div>
+        <div class="preloader-tip" id="preloader-tip">Press any button to start... almost!</div>
+    </div>
+</div>
+
+    <!-- Custom Cursor -->
+
+    <!-- Custom Right-Click Menu -->
+    <div class="custom-menu" id="custom-menu">
+        <div class="menu-item" data-action="back">← Back</div>
+        <div class="menu-item" data-action="reload">⟳ Reload</div>
+        <div class="menu-item" data-action="copy">📋 Copy Link</div>
+        <div class="menu-item" data-action="inspect">🔍 Inspect</div>
+        <hr class="menu-divider">
+        <div class="menu-item" data-action="games">🎮 Games Home</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+<div class="nav-brand">
+    <span class="brand-emoji">🎮</span>
+    <span class="brand-text">GameHub</span>
+</div>
+            <a href="index.html">Home</a>
+            <a href="games.html" class="active">All Games</a>
+            <a href="creator.html">Creator</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="page-header">
+            <h1>🎲 All Games</h1>
+            <p>Choose your adventure – 20+ games, endless fun.</p>
+        </div>
+
+        <div class="games-grid" id="all-games-grid">
+            <!-- Dynamically injected -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 GameHub – Forge your fun.</p>
+    </footer>
+
+    <script src="js/games-data.js"></script>
+    <script src="js/render-games.js"></script>
+    <script src="js/features.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('all-games-grid');
+            if (container) {
+                renderGameCards(gamesList, container);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* css/modal.css */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.modal-body ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.modal-body li {
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #e74c3c;
+  font-size: 1.1rem;
+}
+
+.close-btn:hover {
+  background-color: #c0392b;
+}
+
+.toast {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f1c40f;
+  color: #000;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.toast.fade-out {
+  opacity: 0;
+}

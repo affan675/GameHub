@@ -1,0 +1,329 @@
+/* ========== PRELOADER ========== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a3b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+.preloader-content {
+    text-align: center;
+    color: white;
+}
+.preloader-spinner {
+    width: 70px;
+    height: 70px;
+    border: 5px solid rgba(255,255,255,0.2);
+    border-top: 5px solid var(--secondary);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.preloader-tip {
+    font-size: 1rem;
+    margin: 1rem;
+    max-width: 300px;
+}
+.preloader-progress {
+    width: 250px;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin: 1rem auto;
+    overflow: hidden;
+}
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--secondary);
+    transition: width 0.1s linear;
+}
+
+/* ========== GAMING CROSSHAIR + PULSE – DARK VISIBLE VERSION ========== */
+* {
+    cursor: none !important;
+}
+
+.custom-crosshair {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(0, 0);
+}
+
+.crosshair-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #222;  /* Dark gray, visible on white */
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s;
+    box-shadow: 0 0 2px rgba(255,255,255,0.8); /* Light halo for dark bg */
+}
+
+.crosshair-line {
+    position: absolute;
+    background: #222;  /* Dark lines */
+    transition: all 0.2s;
+}
+.crosshair-horizontal {
+    top: 0;
+    left: -20px;
+    width: 40px;
+    height: 2px;  /* Slightly thicker */
+    transform: translateY(-50%);
+}
+.crosshair-vertical {
+    top: -20px;
+    left: 0;
+    width: 2px;
+    height: 40px;
+    transform: translateX(-50%);
+}
+
+.crosshair-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+
+/* Hover effect – bright neon */
+.custom-crosshair.hover .crosshair-dot {
+    width: 10px;
+    height: 10px;
+    background: #ff00cc;  /* Bright pink/magenta */
+    box-shadow: 0 0 12px #ff00cc;
+}
+.custom-crosshair.hover .crosshair-line {
+    background: #ff00cc;
+    box-shadow: 0 0 6px #ff00cc;
+}
+.custom-crosshair.hover .crosshair-pulse {
+    animation: pulseAnim 0.6s ease-out forwards;
+    border-color: #ff00cc;
+}
+
+@keyframes pulseAnim {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+/* ========== CUSTOM RIGHT-CLICK MENU ========== */
+.custom-menu {
+    position: fixed;
+    background: rgba(30,30,40,0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    min-width: 180px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 10000;
+    display: none;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.custom-menu.active {
+    display: block;
+}
+.menu-item {
+    padding: 0.6rem 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-size: 0.9rem;
+}
+.menu-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+.menu-divider {
+    margin: 0.3rem 0;
+    border-color: rgba(255,255,255,0.1);
+}
+
+
+/* ========== PRELOADER: CONTROLLER BUTTON MASH ========== */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-controller {
+    position: relative;
+    width: 320px;
+    height: 240px;
+    background: rgba(30,30,46,0.8);
+    border-radius: 60px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 30px rgba(0,255,255,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+/* D-Pad */
+.dpad {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.dpad-arm {
+    position: absolute;
+    background: #2c2c3a;
+    transition: background 0.1s, box-shadow 0.1s;
+}
+.dpad-top {
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 35px;
+    border-radius: 6px 6px 0 0;
+}
+.dpad-bottom {
+    width: 30px;
+    height: 30px;
+    bottom: 0;
+    left: 35px;
+    border-radius: 0 0 6px 6px;
+}
+.dpad-left {
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 35px;
+    border-radius: 6px 0 0 6px;
+}
+.dpad-right {
+    width: 30px;
+    height: 30px;
+    right: 0;
+    top: 35px;
+    border-radius: 0 6px 6px 0;
+}
+.dpad-center {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #1e1e2a;
+    top: 38px;
+    left: 38px;
+    border-radius: 4px;
+}
+
+/* Progress fill on D-pad arms */
+.dpad-top.fill {
+    background: #00ffcc;
+    box-shadow: 0 0 12px #00ffcc;
+}
+.dpad-right.fill {
+    background: #00ffcc;
+    box-shadow: 0 0 12px #00ffcc;
+}
+.dpad-bottom.fill {
+    background: #00ffcc;
+    box-shadow: 0 0 12px #00ffcc;
+}
+.dpad-left.fill {
+    background: #00ffcc;
+    box-shadow: 0 0 12px #00ffcc;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    gap: 10px;
+}
+.action-btn {
+    width: 50px;
+    height: 50px;
+    background: #2c2c3a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 0 1px 1px black;
+    transition: all 0.1s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.btn-a { background: #4caf50; }
+.btn-b { background: #f44336; }
+.btn-x { background: #2196f3; }
+.btn-y { background: #ff9800; }
+
+/* Button flash animation */
+.action-btn.flash {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+    box-shadow: 0 0 20px currentColor;
+}
+
+/* Progress text */
+.preloader-progress-text {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+    font-family: monospace;
+}
+
+.preloader-tip {
+    position: absolute;
+    bottom: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    text-align: center;
+}

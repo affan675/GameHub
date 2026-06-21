@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub – Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* Creator page specific */
+        .creator-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .creator-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .creator-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
+        .profile-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .profile-avatar {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+        .avatar-emoji {
+            font-size: 8rem;
+            display: block;
+        }
+        .profile-details {
+            flex: 1;
+        }
+        .profile-details h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .creator-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .creator-card:hover {
+            transform: translateY(-4px);
+        }
+        .creator-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .creator-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .creator-card ul li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .quote-box {
+            background: linear-gradient(135deg, #f0f7ff, #fff);
+            border-left: 5px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+        .forge-footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader, cursor, custom menu (same as other pages) -->
+    <!-- Preloader: Controller Button Mash -->
+<div id="preloader" class="preloader">
+    <div class="preloader-controller">
+        <!-- D-Pad -->
+        <div class="dpad">
+            <div class="dpad-top dpad-arm"></div>
+            <div class="dpad-right dpad-arm"></div>
+            <div class="dpad-bottom dpad-arm"></div>
+            <div class="dpad-left dpad-arm"></div>
+            <div class="dpad-center"></div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <div class="btn-a action-btn">A</div>
+            <div class="btn-b action-btn">B</div>
+            <div class="btn-x action-btn">X</div>
+            <div class="btn-y action-btn">Y</div>
+        </div>
+        
+        <!-- Progress text -->
+        <div class="preloader-progress-text">
+            <span id="preloader-percent">0</span>%
+        </div>
+        <div class="preloader-tip" id="preloader-tip">Press any button to start... almost!</div>
+    </div>
+</div>
+
+
+    <div class="custom-menu" id="custom-menu">
+        <div class="menu-item" data-action="back">← Back</div>
+        <div class="menu-item" data-action="reload">⟳ Reload</div>
+        <div class="menu-item" data-action="copy">📋 Copy Link</div>
+        <div class="menu-item" data-action="inspect">🔍 Inspect</div>
+        <hr class="menu-divider">
+        <div class="menu-item" data-action="games">🎮 Games Home</div>
+    </div>
+
+    <nav class="navbar">
+<div class="nav-brand">
+    <span class="brand-emoji">🎮</span>
+    <span class="brand-text">GameHub</span>
+</div>
+            <a href="index.html">Home</a>
+            <a href="games.html">All Games</a>
+            <a href="creator.html" class="active">Creator</a>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="creator-wrapper">
+            <div class="creator-header">
+                <h1>✨ Creator Profile</h1>
+                <p>The mind behind GameHub</p>
+            </div>
+
+            <div class="profile-section">
+                <div class="profile-avatar">
+                    <span class="avatar-emoji">🧑‍💻</span>
+                </div>
+                <div class="profile-details">
+                    <h2>⚡ Affan Adil</h2>
+                    <div class="detail-item"><span>👤</span> <strong>Name:</strong> Affan Adil</div>
+                    <div class="detail-item"><span>🎂</span> <strong>Age:</strong> 14 years</div>
+                    <div class="detail-item"><span>🏫</span> <strong>School:</strong> PM Shri Jawahar Navodaya Vidyalaya</div>
+                    <div class="detail-item"><span>🇮🇳</span> <strong>Country:</strong> India</div>
+                    <div class="detail-item"><span>🗣️</span> <strong>Mother tongue:</strong> Bengali</div>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="creator-card"><h3>💻 Interests</h3><ul><li>Coding & tech</li><li>Web development</li><li>Entrepreneurship</li><li>Design & innovation</li></ul></div>
+                <div class="creator-card"><h3>🎯 Dream & Vision</h3><ul><li>Become a polymath</li><li>Build industries</li><li>Combine tech + business</li></ul></div>
+                <div class="creator-card"><h3>🤝 Leadership Style</h3><ul><li>Teamwork & organizing</li><li>Systems thinking</li><li>Project creation</li></ul></div>
+                <div class="creator-card"><h3>⚡ Mindset</h3><ul><li>Risk-taker</li><li>Different thinker</li><li>Freedom to learn</li><li>Future-focused</li></ul></div>
+            </div>
+
+            <div class="quote-box">
+                <p>🔥 <strong>Identity Statement:</strong><br>“Affan Adil is a young builder, thinker, and future entrepreneur mastering technology, creativity, and business.”</p>
+            </div>
+
+            <div class="forge-footer">
+                <span class="forge-logo">⚒️ GameHub</span>
+                <p>Forge your fun. Play the grid.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 GameHub – Forge your fun.</p>
+    </footer>
+
+    <script src="js/features.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

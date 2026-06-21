@@ -1,0 +1,46 @@
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .nav-links a {
+        margin: 0 0.8rem;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    .stats {
+        gap: 1rem;
+    }
+    .stat-card {
+        min-width: 100px;
+        padding: 1rem;
+    }
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .detail-item {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 1rem;
+    }
+    .game-card {
+        padding: 0.8rem;
+    }
+    .game-title {
+        font-size: 1rem;
+    }
+    .play-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+}

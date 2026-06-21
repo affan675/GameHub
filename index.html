@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub – Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+   <!-- Preloader: Controller Button Mash -->
+<div id="preloader" class="preloader">
+    <div class="preloader-controller">
+        <!-- D-Pad -->
+        <div class="dpad">
+            <div class="dpad-top dpad-arm"></div>
+            <div class="dpad-right dpad-arm"></div>
+            <div class="dpad-bottom dpad-arm"></div>
+            <div class="dpad-left dpad-arm"></div>
+            <div class="dpad-center"></div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <div class="btn-a action-btn">A</div>
+            <div class="btn-b action-btn">B</div>
+            <div class="btn-x action-btn">X</div>
+            <div class="btn-y action-btn">Y</div>
+        </div>
+        
+        <!-- Progress text -->
+        <div class="preloader-progress-text">
+            <span id="preloader-percent">0</span>%
+        </div>
+        <div class="preloader-tip" id="preloader-tip">Press any button to start... almost!</div>
+    </div>
+</div>
+
+    <!-- Custom Cursor Elements -->
+
+    <!-- Custom Right-Click Menu -->
+    <div class="custom-menu" id="custom-menu">
+        <div class="menu-item" data-action="back">← Back</div>
+        <div class="menu-item" data-action="reload">⟳ Reload</div>
+        <div class="menu-item" data-action="copy">📋 Copy Link</div>
+        <div class="menu-item" data-action="inspect">🔍 Inspect</div>
+        <hr class="menu-divider">
+        <div class="menu-item" data-action="games">🎮 Games Home</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+    <span class="brand-emoji">🎮</span>
+    <span class="brand-text">GameHub</span>
+</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="games.html">All Games</a>
+            <a href="creator.html">Creator</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <section class="hero">
+            <h1 class="hero-title">Welcome to <span class="gradient-text">GameHub</span></h1>
+            <p class="hero-subtitle">Your ultimate destination for brain-training puzzles and arcade fun.</p>
+            <a href="games.html" class="cta-button">Explore Games →</a>
+        </section>
+
+        <section class="featured-games">
+            <h2 class="section-title">✨ Featured Games</h2>
+            <div class="games-grid" id="featured-grid">
+                <!-- Dynamically injected -->
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Games</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Levels</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Free</div>
+                <div class="stat-label">Always</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 GameHub – Forge your fun.</p>
+    </footer>
+
+    <script src="js/games-data.js"></script>
+    <script src="js/render-games.js"></script>
+    <script src="js/features.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Render featured games (first 3 or all if fewer)
+        window.addEventListener('DOMContentLoaded', () => {
+            const featuredContainer = document.getElementById('featured-grid');
+            if (featuredContainer) {
+                const featuredGames = gamesList.slice(0, 4);
+                renderGameCards(featuredGames, featuredContainer);
+            }
+        });
+    </script>
+</body>
+</html>

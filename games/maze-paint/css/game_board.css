@@ -1,0 +1,50 @@
+/* css/game_board.css */
+#game-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.canvas-wrapper {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-canvas {
+  display: block;
+  background-color: transparent;
+  cursor: pointer;
+  /* Ensure pixel art/grid stays sharp if scaled */
+  image-rendering: pixelated;
+  /* Fallback for smoother scaling if not perfectly pixelated */
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+#next-level-container {
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+#btn-next-level {
+  background-color: #27ae60;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+}
+
+#btn-next-level:hover {
+  background-color: #2ecc71;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
